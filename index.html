@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OMAKASE + SAYONARA — para ti</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== INTRO: GALAXIA + SÍMBOLO ===== -->
+  <section id="intro">
+    <canvas id="galaxy"></canvas>
+    <div id="intro-text">
+      <p class="eyebrow">un detalle para</p>
+      <h1 id="nombre-editable" contenteditable="true" spellcheck="false">[ISAA]</h1>
+      <p class="tap-hint">toca la pantalla</p>
+    </div>
+  </section>
+
+  <!-- ===== NAV: alternar entre álbumes ===== -->
+  <nav id="album-nav" hidden>
+    <button class="nav-btn active" data-target="menu">OMAKASE</button>
+    <button class="nav-btn" data-target="sayonara-menu">Ver SAYONARA →</button>
+  </nav>
+
+  <!-- ===== MENÚ PRINCIPAL ===== -->
+  <main id="menu" hidden>
+
+    <!-- fondo con símbolos flotando, tipo constelación -->
+    <canvas id="bg-symbols"></canvas>
+
+    <header class="hero">
+      <p class="eyebrow">ÁLVARO DÍAZ</p>
+      <h1 class="logo-mark">&gt;|&lt;</h1>
+      <h2 class="album-title">OMAKASE</h2>
+      <p class="subtitle">16 platillos</p>
+    </header>
+
+    <!-- ===== COUNTDOWN: OMAKASE TOUR BOGOTÁ (temporal, borrar después del 3 sep 2026) ===== -->
+    <section class="countdown-wrap" id="tour-countdown" data-tour-date="2026-09-03T20:00:00-05:00">
+      <p class="countdown-label">OMAKASE TOUR · Bogotá · Movistar Arena</p>
+      <div class="countdown-grid">
+        <div class="countdown-box"><span class="countdown-num" id="cd-days">--</span><span class="countdown-unit">días</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-unit">horas</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="cd-mins">--</span><span class="countdown-unit">min</span></div>
+        <div class="countdown-box"><span class="countdown-num" id="cd-secs">--</span><span class="countdown-unit">seg</span></div>
+      </div>
+      <p class="countdown-today" hidden>¡ES HOY! 🍣🔥</p>
+    </section>
+
+    <section class="cover-wrap">
+      <div class="cover-frame">
+        <img src="https://github.com/SportAlgorithmus/Para-ti-OMAKASE/blob/main/OMAKASE%20-%20ALVARO%20DIAZ.jpg?raw=true" alt="Portada de OMAKASE" id="cover-img">
+        <div class="cover-fallback">
+          <span>&gt;|&lt;</span>
+          <p>coloca aquí<br><code>assets/cover.jpg</code></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dedicatoria">
+      <p id="mensaje-editable" contenteditable="true" spellcheck="false">
+        Sé lo mucho que te gusta, así que lo hice apenas se me ocurrio.
+        Espero que te guste. ✧😛
+      </p>
+    </section>
+
+    <section class="menu-carta">
+      <p class="carta-titulo">— la carta —</p>
+
+      <div class="fase" data-fase="1">
+        <p class="fase-nombre">Forma Cruda</p>
+        <ol class="platos" start="1">
+          <li data-track="0yUBEGAfkMwDod0wuEHR1e"><div class="fila"><span class="num">01</span><span class="track">SICHEF.</span><button class="play-btn" aria-label="Escuchar SICHEF">▶</button></div><div class="player"></div></li>
+          <li data-track="1lq3A0xNLJ2n3mUa9MGXiU"><div class="fila"><span class="num">02</span><span class="track">MDF.</span><button class="play-btn" aria-label="Escuchar MDF">▶</button></div><div class="player"></div></li>
+          <li data-track="097RNeYnAm9noM6AM3wzDl"><div class="fila"><span class="num">03</span><span class="track">SELEDA.</span><button class="play-btn" aria-label="Escuchar SELEDA">▶</button></div><div class="player"></div></li>
+          <li data-track="2KpWqlm7ceW9erFeHFvCNP"><div class="fila"><span class="num">04</span><span class="track">BIMEL.</span><button class="play-btn" aria-label="Escuchar BIMEL">▶</button></div><div class="player"></div></li>
+        </ol>
+      </div>
+
+      <div class="fase" data-fase="2">
+        <p class="fase-nombre">Sazonar</p>
+        <ol class="platos" start="5">
+          <li data-track="6P5J1CxWKrJLunXdSu5HRd"><div class="fila"><span class="num">05</span><span class="track">PIENSO EN TI.</span><button class="play-btn" aria-label="Escuchar PIENSO EN TI">▶</button></div><div class="player"></div></li>
+          <li data-track="13ZG0ttABjb0rpL84bOBm6"><div class="fila"><span class="num">06</span><span class="track">PERDISTE EL EMMY.</span><span class="feat">ft. Tainy</span><button class="play-btn" aria-label="Escuchar PERDISTE EL EMMY">▶</button></div><div class="player"></div></li>
+          <li data-track="3w2kqFgeVC8TpP7DVI8msw"><div class="fila"><span class="num">07</span><span class="track">TREINEL.</span><span class="feat">ft. Rubi</span><button class="play-btn" aria-label="Escuchar TREINEL">▶</button></div><div class="player"></div></li>
+          <li data-track="2Q9rXVj8oiRW4P0J8By3sY"><div class="fila"><span class="num">08</span><span class="track">EN LA MISMA CIUDAD.</span><span class="feat">ft. Jesse Baez</span><button class="play-btn" aria-label="Escuchar EN LA MISMA CIUDAD">▶</button></div><div class="player"></div></li>
+        </ol>
+      </div>
+
+      <div class="fase" data-fase="3">
+        <p class="fase-nombre">Transformación por Fuego</p>
+        <ol class="platos" start="9">
+          <li data-track="4A3EfCQ3UmfmMPIDFkIjRk"><div class="fila"><span class="num">09</span><span class="track">KILO.</span><span class="feat">ft. Akriila</span><button class="play-btn" aria-label="Escuchar KILO">▶</button></div><div class="player"></div></li>
+          <li data-track="3lM6lM0y5Wm5ZKbQmLh3nW"><div class="fila"><span class="num">10</span><span class="track">BABYRECORDS.</span><button class="play-btn" aria-label="Escuchar BABYRECORDS">▶</button></div><div class="player"></div></li>
+          <li data-track="3fQc7Ca6xCOeNEKvtuRhUN"><div class="fila"><span class="num">11</span><span class="track">SPACEXXX.</span><button class="play-btn" aria-label="Escuchar SPACEXXX">▶</button></div><div class="player"></div></li>
+          <li data-track="7giI2ndmt3L5QiMB8v3McO"><div class="fila"><span class="num">12</span><span class="track">MALASNOTICIAS.</span><span class="feat">ft. LATIN MAFIA</span><button class="play-btn" aria-label="Escuchar MALASNOTICIAS">▶</button></div><div class="player"></div></li>
+        </ol>
+      </div>
+
+      <div class="fase" data-fase="4">
+        <p class="fase-nombre">Sentimiento</p>
+        <ol class="platos" start="13">
+          <li data-track="5Yhti6baaZnDyzehjTuAwZ"><div class="fila"><span class="num">13</span><span class="track">INAROW62.</span><button class="play-btn" aria-label="Escuchar INAROW62">▶</button></div><div class="player"></div></li>
+          <li data-track="4T31PPb8DMhzTp7kUZ3U42"><div class="fila"><span class="num">14</span><span class="track">NO PODEMOS SER AMIGOS.</span><button class="play-btn" aria-label="Escuchar NO PODEMOS SER AMIGOS">▶</button></div><div class="player"></div></li>
+          <li data-track="3h9loy6AKw78avo8C1jHXy"><div class="fila"><span class="num">15</span><span class="track">OVELNAIT.</span><button class="play-btn" aria-label="Escuchar OVELNAIT">▶</button></div><div class="player"></div></li>
+          <li data-track="6ru1GeJs8EAOycsYSNEdRV"><div class="fila"><span class="num">16</span><span class="track">LAULTIMACENA.</span><button class="play-btn" aria-label="Escuchar LAULTIMACENA">▶</button></div><div class="player"></div></li>
+        </ol>
+      </div>
+
+      <p class="carta-nota">* agrupación de canciones por fases hecha a mano por mí — para que se sienta a menú.<br> </p>
+    </section>
+
+    <footer>
+      <p>&gt;|&lt; hecho con cariño — solo porque te queria alegrar el día.</p>
+    </footer>
+
+  </main>
+
+  <!-- ===== SAYONARA ===== -->
+  <main id="sayonara-menu" hidden>
+
+    <!-- fondo con flores flotando, tipo constelación -->
+    <canvas id="bg-symbols-sayonara"></canvas>
+
+    <header class="hero">
+      <p class="eyebrow eyebrow-blue">ÁLVARO DÍAZ</p>
+      <canvas id="sayonara-symbol" width="260" height="260"></canvas>
+      <h2 class="album-title album-title-blue">SAYONARA</h2>
+      <p class="subtitle">20 songs, jojo yes in english juas juas</p>
+    </header>
+
+    <section class="cover-wrap">
+      <div class="cover-frame cover-frame-blue">
+        <img src="https://github.com/MonolasAlgorithmus/Para-ti-OMAKASE/blob/main/sayonara.jpg?raw=true" alt="Portada de SAYONARA" id="cover-img-sayonara">
+        <div class="cover-fallback cover-fallback-blue">
+          <span class="fallback-flower">✿</span>
+          <p>coloca aquí<br><code>assets/cover-sayonara.jpg</code></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dedicatoria dedicatoria-blue">
+      <p id="mensaje-editable-sayonara" contenteditable="true" spellcheck="false">
+        Sayonara también está aquí, como otro menú especial.
+        De principio a fin como una historia, así que te lo dejo completo. ✿ 
+      </p>
+    </section>
+
+    <section class="menu-carta">
+      <p class="carta-titulo carta-titulo-blue">— la historia —</p>
+
+      <div class="fase fase-blue" data-fase="1">
+        <p class="fase-nombre fase-nombre-blue">El Despertar</p>
+        <ol class="platos" start="1">
+          <li data-track="3vfq1ovR6oBGJPvoy4Oy1B"><div class="fila"><span class="num">01</span><span class="track">TE VI EN MIS PESADILLAS.</span><button class="play-btn play-btn-blue" aria-label="Escuchar TE VI EN MIS PESADILLAS">▶</button></div><div class="player"></div></li>
+          <li data-track="2f12t9azZ2tzbajdJt64nD"><div class="fila"><span class="num">02</span><span class="track">KAWA.</span><button class="play-btn play-btn-blue" aria-label="Escuchar KAWA">▶</button></div><div class="player"></div></li>
+          <li data-track="6BpZpCM8d8FJnVnr1IbnFL"><div class="fila"><span class="num">03</span><span class="track">GATITAS SANDUNGUERAS - VOL.1.</span><span class="feat feat-blue">ft. Feid</span><button class="play-btn play-btn-blue" aria-label="Escuchar GATITAS SANDUNGUERAS">▶</button></div><div class="player"></div></li>
+          <li data-track="3T3kxmb4QWwrnzoa3eOakp"><div class="fila"><span class="num">04</span><span class="track">PLN.</span><button class="play-btn play-btn-blue" aria-label="Escuchar PLN">▶</button></div><div class="player"></div></li>
+        </ol>
+      </div>
+
+      <div class="fase fase-blue" data-fase="2">
+        <p class="fase-nombre fase-nombre-blue">La Fantasía</p>
+        <ol class="platos" start="5">
+          <li data-track="2OG4ot6I8MyN1YLAUXdmBo"><div class="fila"><span class="num">05</span><span class="track">FATAL FANTASSY.</span><span class="feat feat-blue">ft. Tainy</span><button class="play-btn play-btn-blue" aria-label="Escuchar FATAL FANTASSY">▶</button></div><div class="player"></div></li>
+          <li data-track="5cqeTJhPAfHU4ROwcgG5L4"><div class="fila"><span class="num">06</span><span class="track">LENTITO.</span><button class="play-btn play-btn-blue" aria-label="Escuchar LENTITO">▶</button></div><div class="player"></div></li>
+          <li data-track="4TUu0QxrNe0Mz6RMVoMda1"><div class="fila"><span class="num">07</span><span class="track">1000CANCIONES.</span><span class="feat feat-blue">ft. Sen Senra</span><button class="play-btn play-btn-blue" aria-label="Escuchar 1000CANCIONES">▶</button></div><div class="player"></div></li>
+          <li data-track="6zMWAKMDVH1uHHDOrm2RdL"><div class="fila"><span class="num">08</span><span class="track">BYAK.</span><span class="feat feat-blue">ft. Rauw Alejandro</span><button class="play-btn play-btn-blue" aria-label="Escuchar BYAK">▶</button></div><div class="player"></div></li>
+        </ol>
+      </div>
+
+      <div class="fase fase-blue" data-fase="3">
+        <p class="fase-nombre fase-nombre-blue">El Vértigo</p>
+        <ol class="platos" start="9">
+          <li data-track="7keTeNuCO2ghzRRW7CVzsJ"><div class="fila"><span class="num">09</span><span class="track">SIN PODERES.</span><span class="feat feat-blue">ft. Young Cister</span><button class="play-btn play-btn-blue" aria-label="Escuchar SIN PODERES">▶</button></div><div class="player"></div></li>
+          <li data-track="62n1ZpeGX7aM7hqC4NcBsJ"><div class="fila"><span class="num">10</span><span class="track">MAMI 100PRE SABE (INTERLUDE).</span><span class="feat feat-blue">ft. Nsqk</span><button class="play-btn play-btn-blue" aria-label="Escuchar MAMI 100PRE SABE">▶</button></div><div class="player"></div></li>
+          <li data-track="5p5uABIXqSPdQ1vMz4bwAu"><div class="fila"><span class="num">11</span><span class="track">EN PR NO HACE FRÍO.</span><span class="feat feat-blue">ft. paopao</span><button class="play-btn play-btn-blue" aria-label="Escuchar EN PR NO HACE FRÍO">▶</button></div><div class="player"></div></li>
+          <li data-track="539iCq2nwEJqYZ734hssyI"><div class="fila"><span class="num">12</span><span class="track">A MI NOMBRE.</span><span class="feat feat-blue">ft. Mora</span><button class="play-btn play-btn-blue" aria-label="Escuchar A MI NOMBRE">▶</button></div><div class="player"></div></li>
+        </ol>
+      </div>
+
+      <div class="fase fase-blue" data-fase="4">
+        <p class="fase-nombre fase-nombre-blue">La Vulnerabilidad</p>
+        <ol class="platos" start="13">
+          <li data-track="0TaouwmpWakN1nTULu0aAK"><div class="fila"><span class="num">13</span><span class="track">QUIÉN TE QUIERE COMO EL NENE.</span><button class="play-btn play-btn-blue" aria-label="Escuchar QUIÉN TE QUIERE COMO EL NENE">▶</button></div><div class="player"></div></li>
+          <li data-track="6FJV85KORYOWb7czKCNFBk"><div class="fila"><span class="num">14</span><span class="track">MAJIN BUU.</span><button class="play-btn play-btn-blue" aria-label="Escuchar MAJIN BUU">▶</button></div><div class="player"></div></li>
+          <li data-track="5JHB8QusYhTWdRw2KJekj6"><div class="fila"><span class="num">15</span><span class="track">YOKO.</span><button class="play-btn play-btn-blue" aria-label="Escuchar YOKO">▶</button></div><div class="player"></div></li>
+          <li data-track="7zJu3gmfC46vRoCQ8MZSIY"><div class="fila"><span class="num">16</span><span class="track">QUIZÁS SI QUIZÁS NO.</span><span class="feat feat-blue">ft. Quevedo</span><button class="play-btn play-btn-blue" aria-label="Escuchar QUIZÁS SI QUIZÁS NO">▶</button></div><div class="player"></div></li>
+        </ol>
+      </div>
+
+      <div class="fase fase-blue" data-fase="5">
+        <p class="fase-nombre fase-nombre-blue">El Adiós</p>
+        <ol class="platos" start="17">
+          <li data-track="6cOjQjg8GRhLozpoyiqvfp"><div class="fila"><span class="num">17</span><span class="track">RAMONA FLOWERS.</span><button class="play-btn play-btn-blue" aria-label="Escuchar RAMONA FLOWERS">▶</button></div><div class="player"></div></li>
+          <li data-track="2mjTbUVSX6HERcei3ovKpl"><div class="fila"><span class="num">18</span><span class="track">FUNERAL.</span><span class="feat feat-blue">ft. Aron</span><button class="play-btn play-btn-blue" aria-label="Escuchar FUNERAL">▶</button></div><div class="player"></div></li>
+          <li data-track="4DrxWZtOT8g8RZuESdzx2q"><div class="fila"><span class="num">19</span><span class="track">GOLDEN GUN.</span><button class="play-btn play-btn-blue" aria-label="Escuchar GOLDEN GUN">▶</button></div><div class="player"></div></li>
+          <li data-track="0PAwMP4DjWqqZJlZkxCsFr"><div class="fila"><span class="num">20</span><span class="track">NO LLORES SI ME VOY.</span><button class="play-btn play-btn-blue" aria-label="Escuchar NO LLORES SI ME VOY">▶</button></div><div class="player"></div></li>
+        </ol>
+      </div>
+
+      <p class="carta-nota">* Sé que tu respuesta fue clara y soy terco como una mula — realmente no busco nada a cambio, solo quiero demostrar lo que siento y regalarte las ideas que se me ocurren.<br>* Te recuerdo que puedes reproducir una pequeña parte de cada canción dandole al botoncito que aparece al lado. 😛</p>
+    </section>
+
+    <footer>
+      <p>✿ Monita.</p>
+    </footer>
+
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
